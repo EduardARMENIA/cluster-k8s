@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: laravel
-          image: eduard2005/my-laravel-app:latest
+          image: eduard2005/my-laravel-app:abc123def456
           ports:
             - containerPort: 9000
           envFrom:
