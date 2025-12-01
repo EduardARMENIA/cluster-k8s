@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: laravel-migrate
+spec:
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: laravel
+          image: eduard2005/my-laravel-app:latest
+          envFrom:
+            - secretRef:
+                name: laravel-secret
+          command: ["php", "artisan", "migrate", "--force"]
+
