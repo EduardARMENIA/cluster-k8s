@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
         - name: laravel
-          image: eduard2005/my-laravel-app:abc123def456
+          image: eduard2005/my-laravel-app:{{ github.sha }}
           ports:
             - containerPort: 9000
           envFrom:
