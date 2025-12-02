@@ -30,7 +30,7 @@ jobs:
       # Build Node API Image
       # -------------------------------
       - name: Build Node API Docker Image
-        run: docker build -t eduard2005/node-api:${{ github.sha }} ./test-app-node
+        run: docker build -t eduard2005/node-api:${{ github.sha }} ./node-api
 
       - name: Push Node API Image to Docker Hub
         run: |
