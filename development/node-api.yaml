@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-api
-          image: eduard2005/node-api:925560952756e19f55cca0ef3e927331f8dd88ab
+          image: eduard2005/node-api:7d74c7ffd9ebe896492483e9ab01f94b93b53bde
           ports:
             - containerPort: 3000
 
