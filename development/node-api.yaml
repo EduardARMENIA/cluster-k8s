@@ -32,4 +32,3 @@ spec:
       port: 80          # Inside cluster
       targetPort: 3000  # Container port
       nodePort: 30089   # Port on the node you can access from host
-
