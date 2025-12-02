@@ -19,14 +19,14 @@ jobs:
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
           docker push eduard2005/my-laravel-app:${{ github.sha }}
 
-      - name: Update deployment.yaml image tag
+      - name: Update development/laravel.yaml image tag
         run: |
-          sed -i "s|image: eduard2005/my-laravel-app:.*|image: eduard2005/my-laravel-app:${GITHUB_SHA}|g" deployment/laravel.yaml
+          sed -i "s|image: eduard2005/my-laravel-app:.*|image: eduard2005/my-laravel-app:${GITHUB_SHA}|g" development/laravel.yaml
 
-      - name: Commit updated deployment.yaml
+      - name: Commit updated development/laravel.yaml
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add deployment/laravel.yaml
+          git add development/laravel.yaml
           git commit -m "Update Laravel image tag to $GITHUB_SHA" || echo "No changes to commit"
           git push
